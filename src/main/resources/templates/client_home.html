@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Client Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script th:src="@{/js/MainJS.js}"></script>
+</head>
+
+<body class="bg-faded">
+    <!-- Sidebar/menu -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <div class="row pt-3">
+                        <div class="col-3">
+                            <img th:src="@{/images/stewie.png}" class="rounded-circle" height="60px" width="60px"/>
+                        </div>
+                        <div class="col-9">
+                            <div class="row">
+                                <div class="container-fluid text-center">
+                                    <p class="">Welcome,<strong>Pet Owner</strong></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="container-fluid text-center">
+                                    <p><span><i class="fa fa-sign-out"></i> </span><a href="#">Logout</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="border-success bg-success">
+                    <div class="nav-wrapper" role="navigation">
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link active sidebar-option" href="#"><span><i class="fa fa-user-circle"></i></span> Overview</a>
+                            <a class="nav-link sidebar-option" href="#"><span><i class="fa fa-github-alt"></i></span> Pets</a>
+                            <a class="nav-link sidebar-option" href="#"><span><i class="fa fa-user-md"></i></span> Doctor</a>
+                            <a class="nav-link sidebar-option" href="#"><span><i class="fa fa-history"></i></span> History</a>
+                            <a class="nav-link sidebar-option" href="#"><span><i class="fa fa-newspaper-o"></i></span> News</a>
+                            <a class="nav-link sidebar-option" href="#"><span><i class="fa fa-cog"></i></span> Settings</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 pt-3">
+                <div class="row">
+                    <div class="container-fluid">
+                        <h4>Overview</h4>
+                        <hr class="border-success bg-success">
+                        <div class="row">
+                            <div class="col col-sm px-1">
+                                <div class="container bg-danger text-white">
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <div class="container text-left">
+                                                <span><i class="fa fa-stethoscope fa-3x"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="container text-right">
+                                                <h3>52</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="container text-center pt-5">
+                                            <h3>Total Vet Visits</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-sm px-1">
+                                <div class="container bg-success text-white">
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <div class="container text-left">
+                                                <span><i class="fa fa-bug fa-3x"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="container text-right">
+                                                <h3>52</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="container text-center pt-5">
+                                            <h3>Total Vet Visits</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-sm px-1">
+                                <div class="container bg-info text-white">
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <div class="container text-left">
+                                                <span><i class="fa fa-medkit fa-3x "></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="container text-right">
+                                                <h3>52</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="container text-center pt-5">
+                                            <h3>Vets with Access</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-sm px-1">
+                                <div class="container bg-primary text-white">
+                                    <div class="row pt-2">
+                                        <div class="col">
+                                            <div class="container text-left">
+                                                <span><i class="fa fa-users fa-3x"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="container text-right">
+                                                <h3>52</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="container text-center pt-5">
+                                            <h3>Member Since</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid pt-5">
+                        <h5>Recent Activity</h5>
+                        <hr class="border-success bg-success">
+                        <table class="table table-striped">
+                            <tr>
+                                <td><i class="fa fa-paw text-info"></i></td>
+                                <td>Pet got vaccine.</td>
+                                <td><i>now</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-file-text text-danger"></i></td>
+                                <td>New record uploaded.</td>
+                                <td><i>17 mins</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-file-text text-warning"></i></td>
+                                <td>New record uploaded.</td>
+                                <td><i>11/17/95</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-bookmark text-primary"></i></td>
+                                <td>Pet is due for a checkup.</td>
+                                <td><i>Millions of years ago</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-rebel text-success"></i></td>
+                                <td>More Stuff.</td>
+                                <td><i>idk</i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-paw text-dark"></i></td>
+                                <td>Last thing.</td>
+                                <td><i>whenever</i></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid">
+                        <h5>Recent Pets</h5>
+                        <hr class="border border-success bg-success">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-success">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-1 col-m-1">
+                                            <img th:src="@{/images/animal1.png}" class="rounded-circle" width="35px" height="35px">
+                                        </div>
+                                        <div class="col-11 col-m-11">
+                                            <h5>Orc</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-success">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-1 col-m-1">
+                                            <img th:src="@{/images/animal2.gif}" class="rounded-circle" width="35px" height="35px">
+                                        </div>
+                                        <div class="col-11 col-m-11">
+                                            <h5>Trump</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-success">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-1 col-m-1">
+                                            <img th:src="@{/images/animal3.png}" class="rounded-circle" width="35px" height="35px">
+                                        </div>
+                                        <div class="col-11 col-m-11">
+                                            <h5>Jane</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid">
+                        <h5>Recent Doctor Comments</h5>
+                        <hr class="border border-success bg-success">
+                        <ul class="list-group">
+                            <li class="list-group-item-info">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-1 col-m-1">
+                                            <img class="rounded-circle" th:src="@{/images/doctor1.png}" width="64px" height="64px">
+                                        </div>
+                                        <div class="col-11 col-m-11">
+                                            <p>Dr. Octopus <span class="text-secondary">Sep 29, 2014, 9:12 PM</span></p>
+                                            <p>Your pets suck.  You as a pet owner should be ashamed, maybe euthanized.</p><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item-info">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-1 col-m-1">
+                                            <img class="rounded-circle" th:src="@{/images/doctor2.png}" width="64px" height="64px">
+                                        </div>
+                                        <div class="col-11 col-m-11">
+                                            <p>Dr. Doom <span class="text-secondary">Sep 28, 2014, 10:15 PM</span></p>
+                                            <p>Commenter above me is a loser. lol.</p><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script language="JavaScript" type="text/javascript" src="webjars/popper.js/1.12.9/dist/popper.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="webjars/bootstrap/4.0.0/dist/js/bootstrap.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="webjars/jquery/3.2.1/dist/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript" th:src="@{/js/nav-set-active.js}"></script>
+</body>
+</html>
