@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class LoginAndRegController {
-    @RequestMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showIndex(ModelMap model) {
-        model.addAttribute("login",new Login());
+        model.addAttribute("loginInfo",new Login());
         model.addAttribute("regInfo",new Register());
         return "index";
     }

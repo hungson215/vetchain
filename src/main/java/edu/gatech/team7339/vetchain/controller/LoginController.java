@@ -1,6 +1,7 @@
 package edu.gatech.team7339.vetchain.controller;
 
 import edu.gatech.team7339.vetchain.bindingObject.Login;
+import edu.gatech.team7339.vetchain.model.User;
 import edu.gatech.team7339.vetchain.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,8 +21,9 @@ public class LoginController {
                                ModelMap model,
                                BindingResult result,
                                RedirectAttributes redirect) {
-        if(userRepo.existsUserByUsernameAndPassword(login.getUsername(),login.getPassword())){
-            return "redidrect:/client_home";
+        User u = userRepo.findUserByUsernameAndPassword(login.getUsername(),login.getPassword());
+        if(u != null){
+            return "redirect:/" + u.getType() + "/" + u.getUsername();
         }
         return "redirect:/";
     }

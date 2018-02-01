@@ -5,10 +5,10 @@
     <title>Client Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0/dist/css/bootstrap.min.css">
+    <link th:href="@{/static/css/style.css}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.0.0/dist/css/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script th:src="@{/js/MainJS.js}"></script>
+    <script th:src="@{/static/js/MainJS.js}"></script>
 </head>
 
 <body class="bg-faded">
@@ -19,16 +19,12 @@
                 <div class="sidebar-sticky">
                     <div class="row pt-3">
                         <div class="col-3">
-                            <img th:src="@{/images/stewie.png}" class="rounded-circle" height="60px" width="60px"/>
+                            <img th:src="@{/static/images/stewie.png}" class="rounded-circle" height="60px" width="60px"/>
                         </div>
                         <div class="col-9">
                             <div class="row">
                                 <div class="container-fluid text-center">
-                                    <p class="">Welcome,<strong>Pet Owner</strong></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="container-fluid text-center">
+                                    <p class="">Welcome, <strong th:text="${userInfo.getUsername()}"></strong></p>
                                     <p><span><i class="fa fa-sign-out"></i> </span><a href="#">Logout</a></p>
                                 </div>
                             </div>
@@ -187,7 +183,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-1 col-m-1">
-                                            <img th:src="@{/images/animal1.png}" class="rounded-circle" width="35px" height="35px">
+                                            <img th:src="@{/static/images/animal1.png}" class="rounded-circle" width="35px" height="35px">
                                         </div>
                                         <div class="col-11 col-m-11">
                                             <h5>Orc</h5>
@@ -199,7 +195,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-1 col-m-1">
-                                            <img th:src="@{/images/animal2.gif}" class="rounded-circle" width="35px" height="35px">
+                                            <img th:src="@{/static/images/animal2.gif}" class="rounded-circle" width="35px" height="35px">
                                         </div>
                                         <div class="col-11 col-m-11">
                                             <h5>Trump</h5>
@@ -211,7 +207,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-1 col-m-1">
-                                            <img th:src="@{/images/animal3.png}" class="rounded-circle" width="35px" height="35px">
+                                            <img th:src="@{/static/images/animal3.png}" class="rounded-circle" width="35px" height="35px">
                                         </div>
                                         <div class="col-11 col-m-11">
                                             <h5>Jane</h5>
@@ -231,7 +227,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-1 col-m-1">
-                                            <img class="rounded-circle" th:src="@{/images/doctor1.png}" width="64px" height="64px">
+                                            <img class="rounded-circle" th:src="@{/static/images/doctor1.png}" width="64px" height="64px">
                                         </div>
                                         <div class="col-11 col-m-11">
                                             <p>Dr. Octopus <span class="text-secondary">Sep 29, 2014, 9:12 PM</span></p>
@@ -244,7 +240,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-1 col-m-1">
-                                            <img class="rounded-circle" th:src="@{/images/doctor2.png}" width="64px" height="64px">
+                                            <img class="rounded-circle" th:src="@{/static/images/doctor2.png}" width="64px" height="64px">
                                         </div>
                                         <div class="col-11 col-m-11">
                                             <p>Dr. Doom <span class="text-secondary">Sep 28, 2014, 10:15 PM</span></p>
@@ -259,9 +255,9 @@
             </div>
         </div>
     </div>
-    <script language="JavaScript" type="text/javascript" src="webjars/popper.js/1.12.9/dist/popper.min.js"></script>
-    <script language="JavaScript" type="text/javascript" src="webjars/bootstrap/4.0.0/dist/js/bootstrap.min.js"></script>
-    <script language="JavaScript" type="text/javascript" src="webjars/jquery/3.2.1/dist/jquery.min.js"></script>
-    <script language="JavaScript" type="text/javascript" th:src="@{/js/nav-set-active.js}"></script>
+    <script language="JavaScript" type="text/javascript" th:src="@{/webjars/popper.js/1.12.9/dist/popper.min.js}"></script>
+    <script language="JavaScript" type="text/javascript" th:src="@{/webjars/bootstrap/4.0.0/dist/js/bootstrap.min.js}"></script>
+    <script language="JavaScript" type="text/javascript" th:src="@{/webjars/jquery/3.2.1/dist/jquery.min.js}"></script>
+    <script language="JavaScript" type="text/javascript" th:src="@{/static/js/nav_set_active.js}"></script>
 </body>
 </html>
