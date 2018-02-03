@@ -14,11 +14,11 @@ public class HomeController {
     @Autowired
     private UserRepo userRepo;
 
-    @RequestMapping(value = "/{type}/{username}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{type}/{id}", method = RequestMethod.GET)
     public String showHomePage(@PathVariable("type") String type,
-                               @PathVariable("username") String username,
+                               @PathVariable("id") int id,
                                ModelMap model) {
-        User user = userRepo.findUserByUsername(username);
+        User user = userRepo.findUserById(id);
         if(user!=null) {
             if (type.equalsIgnoreCase("client")) {
                 model.addAttribute("userInfo", user);

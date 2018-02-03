@@ -3,7 +3,6 @@ package edu.gatech.team7339.vetchain.controller;
 import edu.gatech.team7339.vetchain.model.User;
 import edu.gatech.team7339.vetchain.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,17 +18,20 @@ import java.nio.file.Files;
 public class PetViewController {
     @Autowired
     UserRepo userRepo;
-    @RequestMapping("/{type}/{username}/pets")
+    @RequestMapping("/{type}/{id}/pets")
     public String showPets(@PathVariable("type") String type,
-                           @PathVariable("username") String username,
+                           @PathVariable("id") int id,
                            ModelMap model) {
-        User user = userRepo.findUserByUsername(username);
-        model.addAttribute("userInfo",user);
-        return "petview";
+        User user = userRepo.findUserById(id);
+        if(user != null) {
+            model.addAttribute("userInfo", user);
+            return "petview";
+        }
+        return "redirect:/";
     }
-    @RequestMapping(value = "/{type}/{username}/pets/upload",method = RequestMethod.POST)
+    @RequestMapping(value = "/{type}/{id}/pets/upload",method = RequestMethod.POST)
     public String showPets(@PathVariable("type") String type,
-                           @PathVariable("username") String username,
+                           @PathVariable("id") int id,
                            @RequestParam("fileupload")MultipartFile file,
                            ModelMap model) {
         if (!file.isEmpty()) {
@@ -41,6 +43,6 @@ public class PetViewController {
                e.printStackTrace();
            }
         }
-        return "redirect:/"+type+"/"+username+"/pets";
+        return "redirect:/"+type+"/"+id+"/pets";
     }
 }

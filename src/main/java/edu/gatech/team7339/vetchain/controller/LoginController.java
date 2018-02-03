@@ -23,7 +23,7 @@ public class LoginController {
                                RedirectAttributes redirect) {
         User u = userRepo.findUserByUsernameAndPassword(login.getUsername(),login.getPassword());
         if(u != null){
-            return "redirect:/" + u.getType() + "/" + u.getUsername();
+            return "redirect:/" + u.getType() + "/" + u.getId();
         }
         return "redirect:/";
     }
